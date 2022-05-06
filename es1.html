@@ -171,7 +171,7 @@ function primo()
         let x;
         let vx;
 
-        while(n<100002)
+        while(n<100004)
         {
         do
         {
@@ -182,7 +182,7 @@ function primo()
         vx=n;
         n++;
         }
-        return vx-1;
+        return vx;
     }
 
 
@@ -200,12 +200,12 @@ function primo()
         {
             let fattore=1;
             let fattoriOUT="";
-            n=85300000;
+            n=853302559;
             for(fattore=1;fattore<=n/2;fattore++)
             {
                   if(n%fattore==0)
                   {
-                    fattoriOUT=fattoriOUT+fattore+"<br>"+"sempre forza toro"+"<br>";
+                    fattoriOUT=fattoriOUT+fattore+"<br>";
                   }
             }
             return fattoriOUT;
