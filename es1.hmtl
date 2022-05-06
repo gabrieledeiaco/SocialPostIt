@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriele De Iaco</title>
+</head>
+
+<style>
+        p{
+            font-family: Georgia, sans-serif;
+           color: rgb(0, 0, 0);
+           font-size: 23px;
+        }
+
+        a{
+           font-family: Georgia, sans-serif;
+           color: rgb(0, 0, 0);
+           font-size: 23px; ;
+        }
+
+        body{
+            background-color: rgb(201, 255, 146);
+        }
+
+        button {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button::after {
+  content: "";
+  background-color: #0b5d00;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+button:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+</style>
+
+
+<body>
+
+    
+
+    <p>Collegamento link di consegna</p>
+
+     <a href="xxx">Link Github</a> <br>
+    <a href="http://gabrieledeiaco.altervista.org/">Link Blog</a> <br>
+    <a href=" https://gabrieledeiaco.github.io/tpsit/">Link BS5</a> <br>
+
+</ul>
+
+    <br><br>
+    <p>Bottone per generare il punto 1 e 2 insieme</p>
+<button id="btn" onclick="primo()">
+        Genera
+    </button>
+
+    <br><br>
+
+    <p>Bottone per generare il punto 3</p>
+
+    <button id="btn" onclick="escprimo()">
+        Genera
+    </button>
+
+    <br><br>
+
+    <p>Bottone per generare il punto 4</p>
+
+    <button id="btn" onclick="escprimo2()">
+        Genera
+    </button>
+    <br><br>
+    <p>Bottone per generare il punto 5</p>
+
+
+    <button id="btn" onclick="primo2()">
+        Genera
+    </button>
+
+    <script>
+function primo()
+{
+        let in1=0;
+        let n=840;
+
+        document.write("i fattori di 840 sono: "+"<br>"+Fattorizzatore()+"<br>");
+       
+    
+        function Fattorizzatore(n)
+        {
+            let fattore=1;
+            let fattoriOUT="";
+            n=840;
+            for(fattore=1;fattore<=n/2;fattore++)//esercizio 1
+            {
+                  if(n%fattore==0)
+                  {
+                    fattoriOUT=fattoriOUT+fattore+"<br>"+"sempre forza toro"+"<br>";//esercizio 2
+                  }
+            }
+            return fattoriOUT;
+        }
+
+    }
+
+
+
+//esercizio 3
+
+    function escprimo()
+    {
+        document.write("il primo numero primo dopo 840 è: "+primox2());
+    }
+
+    function primox2()
+    {
+        let n=840;
+        let i=0;
+        let x;
+        let vx;
+
+        while(n<855)
+        {
+        do
+        {
+            i++;
+            x=n%i;
+        }while(x!=0)
+
+        vx=n;
+        n++;
+        }
+
+        return vx-1;
+    }
+
+
+    //esercizio 4
+
+    function escprimo2()
+    {
+        let prodotto;
+        prodotto=primox22()*primox2();
+        document.write("il prodotto tra i primi numeri primi dopo 840 e 100000 è "+prodotto);
+    }
+
+    function primox22()
+    {
+        let n=100000;
+        let i=0;
+        let x;
+        let vx;
+
+        while(n<100002)
+        {
+        do
+        {
+            i++;
+            x=n%i;
+        }while(x!=0)
+
+        vx=n;
+        n++;
+        }
+        return vx-1;
+    }
+
+
+
+    //esercizio 5
+    function primo2()
+{
+        
+        let n=840;
+
+        document.write("i fattori del prodotto dei punti 3 e 4 sono: "+"<br>"+Fattorizzatore2()+"<br>");
+       
+    
+        function Fattorizzatore2(n)
+        {
+            let fattore=1;
+            let fattoriOUT="";
+            n=85300000;
+            for(fattore=1;fattore<=n/2;fattore++)
+            {
+                  if(n%fattore==0)
+                  {
+                    fattoriOUT=fattoriOUT+fattore+"<br>"+"sempre forza toro"+"<br>";
+                  }
+            }
+            return fattoriOUT;
+        }
+
+    }
+
+
+    </script>
+
+</body>
+</html> 
