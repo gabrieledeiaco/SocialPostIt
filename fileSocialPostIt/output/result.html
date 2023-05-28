@@ -1,1 +1,188 @@
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <link href='https://fonts.googleapis.com/css?family=Bungee Spice' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-It card</title>
+  <!-- Aggiungi il link al CSS di Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-vzFZfr2e/Ge1E7Weu8zoGYMDV7dCtYzz1t7XXTcTqL9X51FYBYoByTdybWw8oENlVgY1YJiHtS2/Z8LgEuIzow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    
+    /* Personalizza lo stile delle reazioni */
+    .reaction-btn {
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      border: none;
+      margin-left: 5px;
+      font-size: 1.5rem;
+    }
+    .h1 {
+    background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 165, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      font-family: 'Bungee Spice';
+      font-size: 42px;
+  }
+    
+    .reaction-btn:hover {
+      cursor: pointer;
+    }
+    /* Personalizza lo stile del titolo della card */
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    body {
+    
+    
+    font-size: 14px;
+    background-image: url('https://img.freepik.com/free-vector/rainbow-coloured-watercolour-texture-background_1048-16710.jpg?w=2000');
+			background-size: cover;
+			background-repeat: no-repeat;
+			
+  }
+    
+.card {
+  background: url('https://i.pinimg.com/564x/a7/da/c9/a7dac94bb349c2c5d48fc42ee64b5f87.jpg') no-repeat;
+ background-size:100%; 
+  border-radius:5px;
+  border: solid black 2px;
+  float: left;
+  padding: 11px;
+  
+ 
 
+}
+ .button-home {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+   
+
+
+.button-home:hover,
+.button-home:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-home:active {
+  opacity: .5;
+}
+
+</style>
+  <body class="bg-light" onload='onFunction()'>
+    <br>
+  <h1 class="h1 ">Esposizione dei Post-It:</h1>
+  
+    
+      <a class="button-home" role="button" href = "https://social-post-it-parte-1-4ainfotpsit-1.4ainfotpsit.repl.co/">Torna alla Home</a> <hr>
+
+    
+  </body>
+  <script>
+
+    function onFunction() {
+  fetch('data/data.json') //Inizia una richiesta per recuperare un file JSON dal server.
+    .then(response => response.json()) //Quando la richiesta ha successo, converte la risposta in un oggetto JavaScript.
+    .then(data => {
+      const container = document.createElement('div');  // Crea un nuovo elemento <div> e lo assegna a una variabile chiamata container.
+      container.classList.add('container-fluid' ); //Aggiunge una classe CSS chiamata container-fluid
+     
+
+      const row = document.createElement('div');  //Crea un nuovo elemento <div> e lo assegna a una variabile chiamata row.
+      row.classList.add('row');
+      row.style.padding = '5px';
+      
+         data.forEach(obj=> {  //Per ogni oggetto nel file JSON, inizia un nuovo blocco di codice.
+        const card = document.createElement('div');  //Crea un nuovo elemento <div> e lo assegna a una variabile chiamata card.
+        card.classList.add('card', 'text-white', 'bg-info'); 
+        card.style.width = '250px';
+        card.style.height = '130px';
+        card.style.marginBottom = '10px'; 
+        card.style.marginLeft = '100px';
+           card.bordereRadius = '5px';
+           card.border='solid black 1px';
+
+           
+
+        const reaction = document.createElement('button');  //Crea un nuovo elemento <button> e lo assegna a una variabile chiamata reaction.
+        reaction.classList.add('bg-white'); 
+        reaction.style.border = 'solid black 1px';
+        reaction.style.top = '90px';
+        reaction.style.right = '45px';
+        reaction.style.width = '35px';
+        reaction.style.height = '35px';
+        reaction.style.borderRadius = '5px';
+        reaction.textContent = '👍';
+
+           const reaction1 = document.createElement('button');  //Crea un nuovo elemento <button> e lo assegna a una variabile chiamata reaction1.
+        reaction1.classList.add('bg-white'); 
+        reaction1.style.padding = '1px';
+        reaction1.style.border = 'solid black 1px';
+        reaction1.style.top = '90px';
+        reaction1.style.right = '6px';
+        reaction1.style.width = '35px';
+        reaction1.style.height = '35px';
+        reaction1.style.borderRadius = '5px';
+        reaction1.textContent = '❤';
+
+
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');  //si aggiunge la caratteristica card-body al div che sarebbe lo sfondo 
+
+        const cardTitle = document.createElement('h5');  //si aggiunge un h5 come titolo della card
+        cardTitle.classList.add('card-title');
+        cardTitle.textContent = obj.nickname;
+
+        const cardComment = document.createElement('p'); //si aggiunge un paragrafo che sarà il commento del post
+        cardComment.classList.add('card-text');  
+        cardComment.textContent = obj.commento;
+
+         if(obj.nickname != "" && obj.commento != ""){  // verifica se sia presente un valore sia per la proprietà nickname che per commento.
+        cardBody.appendChild(cardTitle);  //aggiunge l'elemento h5 nella card(aggiunge il testo nella card)
+        cardBody.appendChild(cardComment); ////aggiunge l'elemento p(paragrafo) nella card(aggiunge un paragrafo nella card)
+        card.appendChild(cardBody);  // aggiunge l'elemento div con classe card-body
+        card.appendChild(reaction);
+        card.appendChild(reaction1);
+        row.appendChild(card);  // aggiunge l'elemento div con classe card
+
+         }
+      });
+      
+
+      container.appendChild(row);  //aggiunge l'elemento div con classe row
+      document.querySelector('body').appendChild(container);
+    })
+    .catch(error => console.error('Error loading data:', error));
+}
+
+
+
+
+
+  </script>
+</html>
